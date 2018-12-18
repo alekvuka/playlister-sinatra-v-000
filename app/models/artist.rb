@@ -22,10 +22,5 @@ class Artist < ActiveRecord::Base
     slugafied = self.name.downcase.gsub(" ", "-")
   end
 
-  def self.find_by_slug(slug)
-    deslugafied = slug.gsub("-", " ").downcase.split(" ").map {|n| n.capitalize}.join(" ")
-    self.find_by(name: deslugafied)
-  end
-
 
 end
