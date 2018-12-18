@@ -4,6 +4,7 @@ class SongsController < ApplicationController
     erb  :'/songs/index'
   end
 
+
   get '/songs/new' do
     erb :'songs/new'
   end
@@ -63,6 +64,14 @@ class SongsController < ApplicationController
     @song.save
     flash[:message] = "Successfully created song."
     redirect to("/songs/#{@song.slug}")
+  end
+
+
+  get '/songs/:slug' do
+    #LibraryParser.parse
+
+    song = Song.find_by_slug(params[:slug])
+
   end
 
 end
