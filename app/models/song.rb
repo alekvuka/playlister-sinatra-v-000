@@ -3,7 +3,7 @@ class Song < ActiveRecord::Base
   has_many :song_genres
   has_many :genres, through: :song_genres
 
-<<<<<<< HEAD
+
   @@slug_name = Hash.new
 
   def slug
@@ -19,7 +19,7 @@ class Song < ActiveRecord::Base
     self.find_by(name: deslugafied)
   end
 
-=======
+
   @@name_slug = Hash.new
 
   def slug
@@ -36,5 +36,5 @@ class Song < ActiveRecord::Base
   end
 
 
->>>>>>> 48e8d83df038b7fc83a43e967aa0f74048926d76
+
 end
